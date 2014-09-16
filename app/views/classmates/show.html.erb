@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @classmate.name %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @classmate.school %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @classmate.gender %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <% if  @classmate.bike %>
+   有車
+  <% else %>
+   沒車
+  <% end %>
+  <%= @classmate.bike %>
+</p>
+
+<%= link_to 'Edit', edit_classmate_path(@classmate) %> |
+<%= link_to 'Back', classmates_path %>

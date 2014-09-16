@@ -1,0 +1,33 @@
+<%= form_for(@classmate) do |f| %>
+  <% if @classmate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classmate.errors.count, "error") %> prohibited this classmate from being saved:</h2>
+
+      <ul>
+      <% @classmate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "姓名" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br>
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.check_box :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :bike %><br>
+    <%= f.check_box :bike %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
